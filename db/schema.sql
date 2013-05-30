@@ -6,7 +6,7 @@ CREATE TABLE source_files (
 	filename TEXT, 
 	-- 1,1_Normal.region.png
 	file_path TEXT,
-	-- /bin/resources/taargus_/
+	-- path/to/resources/taargus_/
 	file_size_in_bytes INTEGER,
 	-- 2112
 	image_modified_date NUMERIC, 
