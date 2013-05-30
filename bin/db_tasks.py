@@ -69,15 +69,3 @@ def index_files():
                 info_tupe = (folder, im, full_path, bytes, date_modified)
                 cur.execute(qry_template, info_tupe)
     con.close()
-
-
-def main():
-    for arg in sys.argv:
-        if arg == 'create_table':
-            create_table()
-        if arg == 'index_files':
-            index_files()
-
-
-if __name__ == "__main__":
-    main()
