@@ -38,9 +38,9 @@ def index_files():
     TODO => TEST to see if update/insert command is working correctly
     """
     # set up directories
-    db_folder = os.path.join(os.path.dirname(os.getcwd()),'db')
+    db_folder = os.path.join(os.path.dirname(os.getcwd()),'db') #path to db folder
     db_file = os.path.join(db_folder, 'worldmap.db')
-    resources_folder = os.path.join(os.path.dirname(os.getcwd()),'resources')
+    resources_folder = os.path.join(os.path.dirname(os.getcwd()),'resources') #path to resources folder
 
     # get list of folders with user journeymap information
     mappers_folders = os.listdir(resources_folder)
