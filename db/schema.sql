@@ -8,3 +8,13 @@ CREATE TABLE source_files (
 	image_modified_date NUMERIC, 
 	UNIQUE (username, filename) ON CONFLICT REPLACE
 );
+
+
+DROP TABLE IF EXISTS source_files;
+CREATE TABLE combined_files ( 
+	filename TEXT, 
+	file_path TEXT,
+	file_size_in_bytes INTEGER,
+	image_modified_date NUMERIC, 
+	UNIQUE (filename) ON CONFLICT REPLACE
+);

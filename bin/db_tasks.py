@@ -59,13 +59,13 @@ def index_files():
                 file_path = os.path.join(full_path,im)
                 bytes = os.path.getsize(file_path)
                 date_modified = os.path.getmtime(file_path)
-
+                info_tupe = (folder, im, full_path, bytes, date_modified)
+                
                 # insert or replace sql
                 qry_template = """
                 insert or replace into source_files 
                 (username, filename, file_path, file_size_in_bytes, image_modified_date) 
                 values (?, ?, ?, ?, ?);
                 """
-                info_tupe = (folder, im, full_path, bytes, date_modified)
                 cur.execute(qry_template, info_tupe)
     con.close()

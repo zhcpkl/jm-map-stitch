@@ -6,7 +6,10 @@ Image tasks: slicing, dicing, merging, cropping, etc
 """
 
 def crop(file_path, height, width):
-    """ Self explanatory """
+    """ 
+    crop(file_path, height, width)
+    Self explanatory 
+    """
     im = Image.open(file_path)
     imgwidth, imgheight = im.size
     for i in range(imgheight // height):
@@ -17,6 +20,7 @@ def crop(file_path, height, width):
 
 def day_night_slice(file_path, height, width):
     """ 
+    day_night_slice(file_path, height, width)
     Slice map file to 512x512 day and night slices (will only function with Normal pictures)
     """
     for k,piece in enumerate(img_crop(file_path,height,width)):
@@ -33,6 +37,10 @@ def day_night_slice(file_path, height, width):
 
 
 def merge(list_of_file_paths, destination_dir):
+    """ 
+    merge(list_of_file_paths, destination_dir)
+    Merge data from each file listed
+    """
     np_imgs = [numpy.array(Image.open(im)) for im in list_of_file_paths]
     composite_image = numpy.amax(np_imgs, axis=0)
     new_img = Image.fromarray(composite_image)
@@ -41,6 +49,9 @@ def merge(list_of_file_paths, destination_dir):
 
 
 def generate_thumbnails(list_of_file_paths, height, width, destination_dir):
+    """
+    generate_thumbnails(list_of_file_paths, height, width, destination_dir)
+    """
     total_files = len(list_of_file_paths)
     # print list_of_file_paths[0]
     i = 1
